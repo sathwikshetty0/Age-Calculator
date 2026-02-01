@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Hub</a>
+        <div class="stopwatch-card">
+            <h1>Stopwatch</h1>
+            <div id="display">00:00:00</div>
+            <div class="controls">
+                <button id="start-btn" onclick="startTimer()">Start</button>
+                <button id="lap-btn" onclick="recordLap()">Lap</button>
+                <button id="stop-btn" onclick="stopTimer()">Stop</button>
+                <button id="reset-btn" onclick="resetTimer()">Reset</button>
+            </div>
+            <div id="laps-container">
+                <h3>Laps</h3>
+                <ul id="laps-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

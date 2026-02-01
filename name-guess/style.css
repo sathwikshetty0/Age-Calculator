@@ -1,0 +1,199 @@
+:root {
+    --bg-color: #0f0f11;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-primary: #ffffff;
+    --gradient-1: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+    --accent-yellow: #F7B733;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-blobs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: #0072FF;
+    top: -50px;
+    left: -50px;
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    background: #00C6FF;
+    bottom: -50px;
+    right: -50px;
+}
+
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    z-index: 10;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: white;
+    transform: translateX(-5px);
+}
+
+.game-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+.category-badge {
+    display: inline-block;
+    background: rgba(0, 198, 255, 0.1);
+    border: 1px solid rgba(0, 198, 255, 0.3);
+    color: #4ade80;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background: var(--gradient-1);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.hint-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--accent-yellow);
+    font-size: 14px;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+}
+
+.hint-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-yellow);
+}
+
+.hint-box {
+    background: rgba(247, 183, 51, 0.1);
+    border: 1px solid rgba(247, 183, 51, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #ffd700;
+    font-size: 14px;
+    text-align: left;
+}
+
+#result-message {
+    height: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.success {
+    color: #4ade80 !important;
+}
+
+.error {
+    color: #f87171 !important;
+}
+
+.retry-btn {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.retry-btn:hover {
+    color: white;
+}

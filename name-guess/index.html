@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Guess Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Hub</a>
+        <div class="game-card">
+            <h1>Name Guess</h1>
+            <p>I'm thinking of a name. Can you guess it?</p>
+
+            <div id="category-display" class="category-badge">Category: Loading...</div>
+
+            <div class="input-group">
+                <input type="text" id="name-input" placeholder="Enter your guess...">
+                <button onclick="checkName()">Guess</button>
+            </div>
+
+            <button class="hint-btn" onclick="showHint()">💡 Need a Hint?</button>
+            <div id="hint-container" class="hint-box" style="display: none;">
+                <strong>Hint:</strong> <span id="hint-text"></span>
+            </div>
+
+            <p id="result-message"></p>
+            <button class="retry-btn" onclick="initGame()">New Word ↻</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

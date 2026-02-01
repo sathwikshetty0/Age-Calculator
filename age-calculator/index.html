@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="noise-overlay"></div>
+    <div class="container">
+        <div class="calculator-card">
+            <h1>Age Calculator</h1>
+            <div class="input-group">
+                <label for="date-input">Select your Date of Birth</label>
+                <input type="date" id="date-input">
+            </div>
+            <button onclick="calculateAge()">Calculate Age</button>
+            <p id="result"></p>
+            <div id="precise-age" class="precise-grid"></div>
+            <div id="totals-grid" class="totals-grid"></div>
+            <div id="extra-info" class="extra-info-grid"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

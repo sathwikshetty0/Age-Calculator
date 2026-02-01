@@ -1,0 +1,170 @@
+:root {
+    --bg-color: #0f0f11;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --gradient-1: linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    --gradient-hover: linear-gradient(135deg, #2B86C5 0%, #784BA0 50%, #FF3CAC 100%);
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+}
+
+/* Backgrounds (Same as Age Calculator) */
+.background-blobs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: drift 20s infinite alternate;
+}
+
+.blob-1 {
+    width: 600px;
+    height: 600px;
+    background: #6a11cb;
+    top: -100px;
+    left: -100px;
+}
+
+.blob-2 {
+    width: 500px;
+    height: 500px;
+    background: #2575fc;
+    bottom: -100px;
+    right: -100px;
+}
+
+.blob-3 {
+    width: 400px;
+    height: 400px;
+    background: #ff0080;
+    top: 40%;
+    left: 40%;
+    opacity: 0.4;
+}
+
+@keyframes drift {
+    to {
+        transform: translate(50px, 50px) rotate(20deg);
+    }
+}
+
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJnoiPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjY1IiBudW1PY3RhdmVzPSIzIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2cpIiBvcGFjaXR5PSIwLjAzIi8+PC9zdmc+');
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+header h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(to right, #fff, #ccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.project-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: white;
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0 0 25px 0;
+    flex-grow: 1;
+}
+
+.launch-btn {
+    text-decoration: none;
+    background: var(--gradient-1);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    align-self: flex-start;
+}
+
+.launch-btn:hover {
+    background: var(--gradient-hover);
+    box-shadow: 0 0 20px rgba(120, 75, 160, 0.4);
+}

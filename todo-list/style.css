@@ -1,0 +1,203 @@
+:root {
+    --bg-color: #0f0f11;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-primary: #ffffff;
+    --gradient-1: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.background-blobs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+}
+
+.blob-1 {
+    width: 500px;
+    height: 500px;
+    background: #11998e;
+    bottom: -100px;
+    left: -100px;
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    background: #38ef7d;
+    top: -50px;
+    right: -50px;
+}
+
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 50px;
+    z-index: 10;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: white;
+}
+
+.todo-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    outline: none;
+    font-size: 16px;
+}
+
+button {
+    padding: 15px 25px;
+    border-radius: 12px;
+    border: none;
+    background: var(--gradient-1);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+    transition: 0.2s;
+    animation: fadeIn 0.3s ease;
+}
+
+li:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.task-text {
+    flex-grow: 1;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.task-text:hover {
+    color: #38ef7d;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.actions button {
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actions button:hover {
+    transform: scale(1.1);
+}
+
+.edit-btn:hover {
+    background: #F7B733;
+    color: black;
+}
+
+.delete-btn:hover {
+    background: #ff4757;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
